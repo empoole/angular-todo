@@ -3,7 +3,7 @@
 }
 
 .right-margin {
-	margin-right: 1em;
+	margin-right: 1.25em;
 }
 
 .vertical-center {
@@ -14,4 +14,9 @@
 
 .absolute-right {
 	right: 0;
+}
+
+.bg-green {
+	background-color: #5cb85c;
+	color: #FFFFFF;
 }

@@ -20,21 +20,7 @@
 	</header>
 
 	<section ng-controller="MainController">
-		<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-			<ul class="list-group">
-				<li class="list-group-item" ng-repeat="task in tasks">
-					<div class="checkbox">
-						<label for="{{task.id}}" class="h4">
-							<input type="checkbox" id="{{task.id}}">{{task.name}}
-						</label>
-					</div>
-					<p>{{task.desc}}</p>
-					<div class="vertical-center absolute-right right-margin">
-						<button class="btn btn-danger" ng-click="removeTask(task)">Remove</button>
-					</div>
-				</li>
-			</ul>
-
+		<div class="col-md-4 col-md-offset-2 col-sm-6">
 			<form role="form">
 				<div class="form-group">
 					<div class="well well-small">
@@ -51,6 +37,22 @@
 				</div>
 			</form>
 		</div>
+		<div class="col-md-4 col-sm-6">
+			
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="task in tasks" id="{{task.id}}">
+					<div class="checkbox">
+						<label for="task-{{task.id}}" class="h4">
+							<input type="checkbox" id="task-{{task.id}}" ng-click="completeTask(task)">{{task.name}}
+						</label>
+					</div>
+					<p>{{task.desc}}</p>
+					<div class="vertical-center absolute-right right-margin">
+						<button class="btn btn-danger" ng-click="removeTask(task)">Remove</button>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</section>
 
 	<!--Scripts-->
@@ -61,5 +63,6 @@
 	<!--Angular-->
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/mainController.js"></script>
+
 </body>
 </html>
