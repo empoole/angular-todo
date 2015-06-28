@@ -1,19 +1,6 @@
 app.controller('MainController', ['$scope', function($scope) {
 	//Array to hold task objects
-	$scope.tasks = [
-		{
-			name : "Write app",
-			desc : "Write your angular todo app",
-			complete : false,
-			id : generateId()
-		},
-		{
-			name : "Style app",
-			desc : "Style the app with Bootstrap",
-			complete : false,
-			id : generateId()
-		}
-	]
+	$scope.tasks = [];
 	
 	//Add a new task
 	$scope.addTask = function() {
@@ -23,7 +10,7 @@ app.controller('MainController', ['$scope', function($scope) {
 
 		//Only add new task if the name field is filled
 		if (taskName.length > 0) {
-			
+
 			//Create new task
 			var newTask = {
 				name : taskName,
@@ -64,11 +51,13 @@ app.controller('MainController', ['$scope', function($scope) {
 			$taskId.removeClass("bg-green");
 			$removeBtn.removeClass("btn-success");
 			$removeBtn.addClass("btn-danger");
+			$removeBtn.removeClass("border-white");
 		} else {
 			task.complete = true;
 			$taskId.addClass("bg-green");
 			$removeBtn.removeClass("btn-danger");
 			$removeBtn.addClass("btn-success");
+			$removeBtn.addClass("border-white");
 		}
 	}
 }]);

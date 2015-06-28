@@ -10,4 +10,3 @@ function clearInputs() {
 	$("#add-task-name").val("");
 	$("#add-task-desc").val("");
 }
-
